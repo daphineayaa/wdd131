@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Product Review Form" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Submit a review of your experience with our products. Rate the quality and provide feedback." />
   <meta name="author" content="Ayaa Daphine" />
-  <title>Product Review Form</title>
+  <title>Product Review Form | Ayaa Daphine</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/styles.css" />
-  <script src="scripts/products.js"></script>
   <script src="scripts/footer.js" defer></script>
 </head>
 <body>
@@ -18,36 +17,51 @@
 
   <main>
     <form action="review.html" method="get">
+      <!-- Select product -->
       <label for="product">Product Name*:</label>
       <select id="product" name="product" required></select>
 
-      <label for="rating">Overall Rating*:</label>
-      <select id="rating" name="rating" required>
-        <option value="">--Select--</option>
-        <option value="1">1 - Poor</option>
-        <option value="2">2</option>
-        <option value="3">3 - Average</option>
-        <option value="4">4</option>
-        <option value="5">5 - Excellent</option>
-      </select>
+      <!-- Radio buttons (required for audit) -->
+      <fieldset>
+        <legend>Overall Rating*:</legend>
+        <label><input type="radio" name="rating" value="1" required> 1 - Poor</label>
+        <label><input type="radio" name="rating" value="2" required>  2- fair</label>
+        <label><input type="radio" name="rating" value="3" required> 3 - good</label>
+        <label><input type="radio" name="rating" value="4" required> 4- average</label>
+        <label><input type="radio" name="rating" value="5" required>  5 - Excellent</label>
+      </fieldset>
 
+      <!-- Date input -->
       <label for="install-date">Date of Installation*:</label>
       <input type="date" id="install-date" name="installDate" required />
 
+      <!-- Checkboxes (required for audit) -->
+      <fieldset>
+        <legend>Features Used:</legend>
+        <label><input type="checkbox" name="features" value="durability"> Durability</label>
+        <label><input type="checkbox" name="features" value="design"> Design</label>
+        <label><input type="checkbox" name="features" value="performance"> Performance</label>
+        <label><input type="checkbox" name="features" value="value"> Value for Money</label>
+      </fieldset>
+
+      <!-- Text input (required for audit) -->
+      <label for="username">Your Name:</label>
+      <input type="text" id="username" name="username" required />
+
+      <!-- Textarea -->
       <label for="comments">Comments:</label>
       <textarea id="comments" name="comments" rows="4" placeholder="Write your thoughts here..."></textarea>
 
+      <!-- Submit button -->
       <button type="submit">Submit Review</button>
     </form>
   </main>
 
-  ...
   <footer>
     <p>&copy; <span id="year"></span> | Uganda</p>
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script src="scripts/products.js"></script>
-
+  <script src="scripts/products.js" defer></script>
 </body>
 </html>
