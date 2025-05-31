@@ -1,0 +1,55 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #75d1e4;
+  color: #2F4F4F;
+}
+
+header {
+  background-color: #1d443f;
+  padding: 1em;
+  text-align: center;
+  color: white;
+}
+
+.tagline {
+  font-style: italic;
+}
+
+main {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1, h2 {
+  font-family: 'Merriweather', serif;
+}
+.wireframes {
+  display: flex;
+  gap: 1rem; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+}
+
+.wireframes figure {
+  text-align: center;
+}
+
+
+footer {
+  background-color: #2F4F4F;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.note {
+  font-size: 0.9rem;
+  font-style: italic;
+}
