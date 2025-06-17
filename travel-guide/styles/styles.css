@@ -1,0 +1,137 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Typography */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #0a2239; /* Deep navy blue */
+  color: #e0e0e0;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Header and Footer */
+header, footer {
+  background-color: #0b3c5d;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+header h1, footer p {
+  font-size: 1.3rem;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Navigation */
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #f0f0f0;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #4fc3f7;
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin: 1rem 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Destination Grid Layout */
+#featured-list,
+.destinations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Destination Card Styling */
+.destination-card {
+  background-color: #1a2d4d;
+  border: 1px solid #2e537d;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+.destination-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.destination-card h3 {
+  color: #4fc3f7;
+  font-size: 1.2rem;
+}
+
+.destination-card p,
+.destination-card small {
+  color: #d0eaff;
+}
+
+/* Buttons */
+button {
+  margin: 0.3rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #4fc3f7;
+  color: #0a2239;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #35b0e3;
+}
+
+/* Responsive Padding */
+@media (min-width: 768px) {
+  body {
+    padding: 0 3rem;
+  }
+
+  #featured-list,
+  .destinations-grid {
+    justify-content: space-around;
+  }
+}

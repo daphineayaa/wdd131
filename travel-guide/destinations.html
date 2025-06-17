@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Guide - Destinations</title>
+  <meta name="description" content="Explore various travel destinations around the world. Filter by continent to find your next adventure." />
+  <meta name="author" content="Ayaa Daphine" />
+  <meta name="keywords" content="travel, destinations, guide, explore, continents, adventure" />
+  <link rel="stylesheet" href="styles/styles.css" /> 
+  <script src="scripts/scripts.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Explore the World: Destinations</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="destinations.html">Destinations</a> |
+      <a href="contact.html">Contact</a> 
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <section id="filter-section">
+        <h2>Filter by Continent</h2>
+        <button data-continent="All">All</button>
+        <button data-continent="Africa">Africa</button>
+        <button data-continent="Asia">Asia</button>
+        <button data-continent="Europe">Europe</button>
+        <button data-continent="North America">North America</button>
+        <button data-continent="South America">South America</button>
+        <button data-continent="Oceania">Oceania</button>
+      </section>
+
+      <section id="destinations-list" class="destinations-grid"></section>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 Travel Guide</p>
+  </footer>
+
+  <script>
+    const destinations = [
+      {name: "Paris", continent: "Europe", image: "images/paris.jpg", description: "City of lights and love."},
+      {name: "Tokyo", continent: "Asia", image: "images/tokyo.jpg", description: "Historic temples and gardens."},
+      {name: "Cape Town", continent: "Africa", image: "images/cape.webp", description: "Breathtaking landscapes."},
+      {name: "New York", continent: "North America", image: "images/New_york.webp", description: "The city that never sleeps."},
+      {name: "Rio de Janeiro", continent: "South America", image: "images/janeiro.jpg", description: "Famous for its Carnival festival."},
+      {name: "Sydney", continent: "Oceania", image: "images/sydney.jpg", description: "Iconic Opera House and beaches."}
+    ];
+
+    const filterButtons = document.querySelectorAll('#filter-section button');
+    const destinationsList = document.getElementById('destinations-list');
+
+    function displayDestinations(filterContinent = "All") {
+      destinationsList.innerHTML = "";
+      let filtered = destinations;
+      if (filterContinent !== "All") {
+        filtered = destinations.filter(dest => dest.continent === filterContinent);
+      }
+      for (const dest of filtered) {
+        destinationsList.innerHTML += `
+          <article class="destination-card">
+            <img src="${dest.image}" alt="${dest.name}" loading="lazy" />
+            <h3>${dest.name}</h3>
+            <p>${dest.description}</p>
+            <small><em>${dest.continent}</em></small>
+          </article>
+        `;
+      }
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const continent = button.getAttribute('data-continent');
+        displayDestinations(continent);
+      });
+    });
+
+    // Initial display
+    displayDestinations();
+  </script>
+</body>
+</html>
